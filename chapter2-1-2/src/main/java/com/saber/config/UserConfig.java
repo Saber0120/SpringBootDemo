@@ -4,6 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sheng on 2018/4/17.
@@ -15,6 +16,8 @@ public class UserConfig {
     private String username;
 
     private List<String> url;
+
+    private Map map;
 
     public String getUsername() {
         return username;
@@ -30,5 +33,13 @@ public class UserConfig {
 
     public void setUrl(List<String> url) {
         this.url = url;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 }

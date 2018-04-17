@@ -22,7 +22,7 @@ public class Chapter212ApplicationTests {
 	@Test
 	public void testConfig() {
 //		Assert.assertEquals(config.getUsername(), "saber");
-
-		Assert.assertEquals(config.getUrl().size(), 2	);
+//		Assert.assertEquals(config.getUrl().size(), 2	);
+		Assert.assertEquals(config.getMap().get("foo.baz"), "bar");
 	}
 }
