@@ -1,0 +1,11 @@
+#列表，yaml形式
+#com:
+#  saber:
+#    url:
+#      - http://wwww.baidu.com
+#      - http://wwww.qq.com
+
+#列表，yaml形式，逗号分割
+com:
+  saber:
+    url: http://wwww.baidu.com,http://wwww.qq.com
