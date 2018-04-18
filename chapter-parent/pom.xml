@@ -22,11 +22,17 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<lombok.version>1.16.20</lombok.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<!-- other dependecies -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
