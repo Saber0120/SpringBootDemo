@@ -13,9 +13,9 @@
 
 	<parent>
 		<groupId>com.saber</groupId>
-		<artifactId>chapter-parent</artifactId>
+		<artifactId>chapter-parent-1</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../chapter-parent/pom.xml</relativePath>
+		<relativePath>../chapter-parent-1/pom.xml</relativePath>
 	</parent>
 
 	<dependencies>

@@ -2,7 +2,6 @@ package com.saber.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
@@ -32,30 +31,30 @@ public class PrimaryConfig {
 
     @Autowired
     @Qualifier("primaryDataSource")
-    private DataSource dataSource;
+    private DataSource primaryDataSource;
 
     @Autowired
     private JpaProperties jpaProperties;
 
     @Primary
     @Bean(name = "entityManagerPrimary")
-    public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactoryBean(builder).getObject().createEntityManager();
+    public EntityManager entityManagerPrimary(EntityManagerFactoryBuilder builder) {
+        return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
     }
 
     @Primary
     @Bean(name = "entityManagerFactoryPrimary")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(dataSource).properties(getVendorProperties()).packages("com.saber.entity.p").persistenceUnit("primaryPersistenceUnit").build();
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
+        return builder.dataSource(primaryDataSource).properties(getVendorProperties()).packages("com.saber.entity.p").persistenceUnit("primaryPersistenceUnit").build();
     }
 
-    private Map<String, Object> getVendorProperties() {
-        return jpaProperties.getHibernateProperties(new HibernateSettings());
+    private Map<String, String> getVendorProperties() {
+        return jpaProperties.getHibernateProperties(primaryDataSource);
     }
 
     @Primary
     @Bean(name = "transactionManagerPrimary")
-    public PlatformTransactionManager transactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactoryBean(builder).getObject());
+    public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
     }
 }

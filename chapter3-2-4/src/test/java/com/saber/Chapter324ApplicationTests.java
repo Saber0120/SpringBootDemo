@@ -41,6 +41,6 @@ public class Chapter324ApplicationTests {
 		messageRepository.save(new Message("cc", "cccontent"));
 		messageRepository.save(new Message("dd", "ddcontent"));
 		messageRepository.save(new Message("ee", "eecontent"));
-		Assert.assertEquals(messageRepository.findAll(), 3);
+		Assert.assertEquals(messageRepository.findAll().size(), 3);
 	}
 }
