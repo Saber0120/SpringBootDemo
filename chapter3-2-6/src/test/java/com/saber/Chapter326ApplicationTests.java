@@ -39,7 +39,7 @@ public class Chapter326ApplicationTests {
         valOpsStr.set("aaa", "111");
         Assert.assertEquals(valOpsStr.get("aaa"), "111");
 
-        User user = new User("Saber", 22);
+        User user = new User(1, "Saber", 22);
         valOpsObj.set("user", user);
         User redisUser = (User) valOpsObj.get("user");
         Assert.assertEquals(redisUser.getUsername(), "Saber");

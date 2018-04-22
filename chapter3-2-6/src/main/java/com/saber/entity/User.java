@@ -9,6 +9,8 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 7993768535009139109L;
 
+    private Integer id;
+
     private String username;
 
     private Integer age;
@@ -16,9 +18,18 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String username, Integer age) {
+    public User(Integer id, String username, Integer age) {
+        this.id = id;
         this.username = username;
         this.age = age;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -40,7 +51,8 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "id=" + id +
+                ", username='" + username + '\'' +
                 ", age=" + age +
                 '}';
     }
