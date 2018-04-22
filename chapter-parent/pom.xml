@@ -52,12 +52,6 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- jdbc支持 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-
 		<!-- thymeleaf模板-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -70,10 +64,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
-		<!-- jdbc连接池 -->
+		<!-- redis -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
 		<!-- SWAGGER -->
@@ -89,6 +83,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

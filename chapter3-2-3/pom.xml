@@ -16,4 +16,12 @@
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../chapter-parent/pom.xml</relativePath>
 	</parent>
+
+	<dependencies>
+		<!-- jdbc支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+	</dependencies>
 </project>
